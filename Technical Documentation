@@ -1,0 +1,192 @@
+ProtectWave VPN – Complete Technical Documentation
+1. Product Overview
+
+Product Name: ProtectWave VPN
+Purpose: Secure and private internet access. Users can choose free mode (with ads) or paid subscription (ad-free).
+Target Users: Free users and paid subscribers.
+
+2. Core Features
+
+VPN connect/disconnect
+Server selection (start with 3 servers: USA, Germany, Singapore)
+Paid subscription → ad-free experience
+Free users → optional login, ads displayed
+Subscription status check
+Login/logout functionality
+Networking & routing essentials
+Data isolation per user
+
+3. Feature Prioritization
+
+Priority 1 – Core
+
+VPN connect/disconnect
+Server selection
+Paid subscription login → ad-free experience
+
+Priority 2 – Important
+
+Connection status
+Password reset
+Data isolation
+
+Priority 3 – Optional
+
+Auto-reconnect
+Analytics
+Additional servers
+
+4. Tech Stack
+
+Backend: Go (Golang) – fast, secure, networking-friendly
+Database: PostgreSQL – stores users, subscriptions, tokens
+Cloud: AWS – hosts backend, database, VPN servers
+VPN Protocol: WireGuard – encrypted traffic
+
+5. API Contracts
+5.1 User Registration (Paid Users)
+
+Endpoint: POST /register
+Request Body:
+
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+
+Response:
+
+{
+  "message": "User registered successfully"
+}
+
+5.2 User Login
+
+Endpoint: POST /login
+Request Body:
+
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+
+Response:
+
+{
+  "token": "sample_token_value",
+  "subscription": "paid"
+}
+
+5.3 Get User Profile
+
+Endpoint: GET /profile
+Headers:
+
+Authorization: Bearer sample_token_value
+
+
+Response:
+
+{
+  "email": "user@example.com",
+  "subscription": "paid"
+}
+
+5.4 Get VPN Server List
+
+Endpoint: GET /servers
+Response:
+
+[
+  { "id": 1, "country": "UK" },
+  { "id": 2, "country": "Germany" },
+  { "id": 3, "country": "Portugal" }
+]
+
+5.5 Connect to VPN Server
+
+Endpoint: POST /connect
+Request Body:
+
+{
+  "server_id": 2
+}
+
+
+Response:
+
+{
+  "status": "connected"
+}
+
+5.6 Disconnect VPN
+
+Endpoint: POST /disconnect
+Response:
+
+{
+  "status": "disconnected"
+}
+
+5.7 Subscription Status
+
+Endpoint: GET /subscription
+Headers:
+
+Authorization: Bearer sample_token_value
+
+
+Response:
+
+{
+  "plan": "paid",
+  "ads": false
+}
+
+5.8 Logout
+
+Endpoint: POST /logout
+Headers:
+
+Authorization: Bearer sample_token_value
+
+
+Response:
+
+{
+  "message": "Logged out successfully"
+}
+
+
+Notes:
+
+Free users can access server list and connect without login
+Paid users require authentication token
+Tokens are used for secure communication
+APIs include both our custom APIs and optional external APIs (payment, ads, email verification)
+
+6. System Architecture (Conceptual)
+Client (App) → Backend (APIs) → Database
+                        ↘
+                         VPN Servers → Internet
+
+
+Flow Example (Login):
+
+Client → Backend (/login) → Database → Backend → Response → Client
+
+7. Additional Notes
+
+Free users: ads displayed, no login required
+Paid users: must login, no ads
+Tokens: digital key for paid users
+Traffic: encrypted through VPN server (WireGuard)
+External APIs used for: payments, ads, email verification
+
+8. Future References
+
+Backend implementation will follow API contracts
+Database schema: users table, server table, subscription table
+VPN server setup: WireGuard protocol, routing, encryption
