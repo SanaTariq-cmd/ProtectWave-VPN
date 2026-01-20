@@ -1,0 +1,207 @@
+# ProtectWave VPN – API Contracts
+
+This document defines the communication agreement between the ProtectWave VPN client application and the backend server.
+
+These APIs are based on prioritized core features.
+
+---
+
+## 1. User Registration (Paid Users)
+
+**Endpoint:**
+POST `/register`
+
+**Request Body:**
+
+```json
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "User registered successfully"
+}
+```
+
+Purpose:
+Creates a new paid user account.
+
+---
+
+## 2. User Login
+
+**Endpoint:**
+POST `/login`
+
+**Request Body:**
+
+```json
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+```
+
+**Response:**
+
+```json
+{
+  "token": "sample_token_value",
+  "subscription": "paid"
+}
+```
+
+Purpose:
+Authenticates user and returns a token for future requests.
+
+---
+
+## 3. Get User Profile
+
+**Endpoint:**
+GET `/profile`
+
+**Headers:**
+
+```
+Authorization: Bearer sample_token_value
+```
+
+**Response:**
+
+```json
+{
+  "email": "user@example.com",
+  "subscription": "paid"
+}
+```
+
+Purpose:
+Returns user account information.
+
+---
+
+## 4. Get VPN Server List
+
+**Endpoint:**
+GET `/servers`
+
+**Response:**
+
+```json
+[
+  { "id": 1, "country": "UK" },
+  { "id": 2, "country": "Germany" },
+  { "id": 3, "country": "Portugal" }
+]
+```
+
+Purpose:
+Returns available VPN servers for selection.
+
+---
+
+## 5. Connect to VPN Server
+
+**Endpoint:**
+POST `/connect`
+
+**Request Body:**
+
+```json
+{
+  "server_id": 2
+}
+```
+
+**Response:**
+
+```json
+{
+  "status": "connected"
+}
+```
+
+Purpose:
+Connects the user to selected VPN server.
+
+---
+
+## 6. Disconnect VPN
+
+**Endpoint:**
+POST `/disconnect`
+
+**Response:**
+
+```json
+{
+  "status": "disconnected"
+}
+```
+
+Purpose:
+Disconnects VPN connection.
+
+---
+
+## 7. Subscription Status
+
+**Endpoint:**
+GET `/subscription`
+
+**Headers:**
+
+```
+Authorization: Bearer sample_token_value
+```
+
+**Response:**
+
+```json
+{
+  "plan": "paid",
+  "ads": false
+}
+```
+
+Purpose:
+Checks if user is paid or free.
+
+---
+
+## 8. Logout
+
+**Endpoint:**
+POST `/logout`
+
+**Headers:**
+
+```
+Authorization: Bearer sample_token_value
+```
+
+**Response:**
+
+```json
+{
+  "message": "Logged out successfully"
+}
+```
+
+Purpose:
+Ends user session.
+
+---
+
+## Notes
+
+* Free users can access server list and connect without login.
+* Paid users require authentication token.
+* Tokens are used for secure communication.
+* This document defines contracts only, not backend implementation.
