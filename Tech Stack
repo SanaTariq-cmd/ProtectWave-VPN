@@ -1,0 +1,18 @@
+## Tech Stack Selection for ProtectWave VPN
+
+### Backend
+- Language: Go (Golang)
+- Reason: Fast, secure, reliable, and suitable for networking applications.
+
+### Database
+- PostgreSQL
+- Reason: Stable relational database, easy to maintain, widely used in production systems.
+
+### Cloud Infrastructure
+- AWS (Amazon Web Services)
+- Reason: Scalable cloud platform to host backend services, database, and VPN servers.
+
+### VPN Technology
+- WireGuard protocol for encrypted VPN tunnels.
+
+This tech stack is chosen for simplicity, scalability, and industry relevance.
