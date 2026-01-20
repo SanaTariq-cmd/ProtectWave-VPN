@@ -1,21 +1,25 @@
 ## 1. Complete Feature List
 
 ### User Management
-- User registration  
-- User login  
-- User logout  
-- Password reset  
+- Optional login for free users (with ads)
+-Mandatory login for paid subscribers
+-No Ads for paid subscribers
+-User registration tied with email
+-Password reset
 
 ### VPN Connection
 - Connect to VPN server  
 - Disconnect from VPN server  
-- Server selection (e.g., location choice)  
+- Server selection (3 servers initially)  
 - Connection status display  
+-Auto-reconnect
 
-### Security
+### Security & Networking
 - Encrypted traffic (WireGuard)  
 - User data isolation  
 - Secure authentication  
+-Traffic routing via VPN servers
+-Network essentials: IP assignment, DNS protection, routing
 
 ### Optional / Future Enhancements
 - Auto-connect on device start  
@@ -27,7 +31,9 @@
 - User login / registration  
 - Connect / disconnect VPN  
 - Server selection  
-- WireGuard encrypted connection  
+- WireGuard encryption
+-Paid subscriber login (ad-free experience)
+-Free user optional login (with ads)
 - Connection status  
 
 ### Priority 2 – Important Features
