@@ -1,0 +1,36 @@
+## 1. Overview
+This section explains the high-level architecture of ProtectWave VPN and how the client, backend, and servers interact to provide secure internet access.
+
+## 2. Components
+
+### Client
+- Installed on mobile or desktop devices  
+- Handles login, server selection, connect/disconnect, and connection status  
+
+### Backend
+- Manages accounts and authentication  
+- Issues tokens for secure login  
+- Does not handle user internet traffic  
+
+### VPN Servers
+- Handles encrypted traffic using WireGuard  
+- Routes internet traffic securely  
+- Ensures privacy and anonymity  
+
+## 3. System Flow
+[Client / User Device]
+|
+v
+[Backend Server] --> authentication, account management
+|
+v
+[VPN Servers] --> encrypt and route user traffic
+|
+v
+Internet
+
+## 4. Security Considerations
+- User data isolation  
+- Encrypted passwords  
+- Secure VPN traffic via WireGuard
+
