@@ -1,0 +1,40 @@
+## 1. Complete Feature List
+
+### User Management
+- User registration  
+- User login  
+- User logout  
+- Password reset  
+
+### VPN Connection
+- Connect to VPN server  
+- Disconnect from VPN server  
+- Server selection (e.g., location choice)  
+- Connection status display  
+
+### Security
+- Encrypted traffic (WireGuard)  
+- User data isolation  
+- Secure authentication  
+
+### Optional / Future Enhancements
+- Auto-connect on device start  
+- Basic analytics or usage logs (for user info only)  
+
+## 2. Feature Prioritization
+
+### Priority 1 – Core Features
+- User login / registration  
+- Connect / disconnect VPN  
+- Server selection  
+- WireGuard encrypted connection  
+- Connection status  
+
+### Priority 2 – Important Features
+- User logout  
+- Password reset  
+- Data privacy & isolation  
+
+### Priority 3 – Optional Features
+- Auto-connect  
+- Basic usage analytics  
