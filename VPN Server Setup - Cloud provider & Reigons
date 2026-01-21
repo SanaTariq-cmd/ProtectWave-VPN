@@ -1,0 +1,42 @@
+Cloud Provider Selection
+
+ProtectWave VPN will use Amazon Web Services (AWS) as the cloud provider.
+
+Reasons for choosing AWS:
+
+Global availability
+High reliability and uptime
+Strong security standards
+Easy scalability for future growth
+Industry-standard choice for VPN services
+AWS allows us to deploy VPN servers in multiple countries using its global infrastructure.
+
+Region Selection
+
+For the initial launch, ProtectWave VPN will start with three server locations as required:
+Server Location	AWS Region Code
+United Kingdom	eu-west-2
+Germany	eu-central-1
+Portugal	eu-west-3
+
+Business & User Benefits
+
+Users can select the country they want to connect to
+Better speed due to geographic proximity
+Improved reliability and redundancy
+Global presence from day one
+
+Usage in Application
+
+When a user selects a country in the app:
+The VPN client connects to the corresponding AWS server running WireGuard in that region.
+
+Future Expansion
+
+More regions and servers can be added easily using AWS infrastructure as the user base grows.
+
+Summary
+
+Cloud Provider: AWS
+Initial Regions: UK, Germany, Portugal
+Purpose: Secure, fast, and globally accessible VPN service
