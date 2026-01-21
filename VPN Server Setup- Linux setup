@@ -1,0 +1,24 @@
+Linux VPN Server Setup
+ProtectWave VPN will use Ubuntu Linux as the operating system for all VPN servers.
+
+Operating System:
+Ubuntu 22.04 LTS
+
+Setup Objectives:
+
+Create secure Linux server instance in AWS
+Enable secure remote access
+Apply system updates
+Configure firewall rules
+Prepare system for WireGuard installation
+
+Security Measures:
+
+SSH based access only
+Firewall enabled
+Minimal open ports
+System logging enabled
+
+Purpose:
+
+This step ensures the VPN server is stable, secure, and ready for VPN protocol configuration in the next phase.
